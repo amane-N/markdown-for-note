@@ -1,6 +1,6 @@
 # Markdown for note プライバシーポリシー
 
-最終更新日：2026年5月2日
+最終更新日：2026年5月3日
 
 「Markdown for note」（以下「本拡張機能」）は、ユーザーのプライバシーを最大限尊重します。本拡張機能におけるデータの取り扱いについて、以下のとおり明示します。
 
@@ -42,4 +42,4 @@
 
 - 開発者：Amane.N
 - 連絡先：amane.n4802@gmail.com
-- GitHub：https://github.com/amane-N/markdown-for-note
+- GitHub：[https://github.com/amane-N/markdown-for-note](https://github.com/amane-N/markdown-for-note)
