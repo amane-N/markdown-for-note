@@ -24,3 +24,6 @@ node_modules/
 
 # 個人用開発計画書（公開したくない場合。公開OKならこの2行を削除）
 Markdown to note 開発計画書*.txt
+
+# Claude Code とのチャット用に貼り付けるスクショ（毎回上書きされるため除外）
+image.png
