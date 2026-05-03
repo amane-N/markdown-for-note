@@ -1,0 +1,26 @@
+# 配布用 ZIP（再生成可能なため Git に含めない）
+*.zip
+
+# OS / エディタ自動生成ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / エディタ
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code のローカル設定（個人環境固有のため Git には含めない）
+.claude/
+
+# Node.js（将来 npm を使う場合）
+node_modules/
+
+# 一時ファイル
+*.tmp
+*.log
+
+# 個人用開発計画書（公開したくない場合。公開OKならこの2行を削除）
+Markdown to note 開発計画書*.txt

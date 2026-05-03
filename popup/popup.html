@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown for note</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="../lib/marked.min.js"></script>
+  <script src="../lib/note-formatter.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="app-header">
+      <h1 class="app-title">Markdown for note</h1>
+      <span class="app-version" id="app-version">v1.0.0</span>
+      <button id="settings-btn" class="settings-btn" type="button" aria-label="設定" aria-expanded="false" title="設定">⚙️</button>
+    </header>
+
+    <section id="settings-panel" class="settings-panel" hidden aria-labelledby="settings-panel-title">
+      <h2 id="settings-panel-title" class="settings-panel-title">設定</h2>
+      <label class="settings-item">
+        <input type="checkbox" id="setting-convert-h1" class="settings-checkbox" checked>
+        <span class="settings-label">h1 を h2 に変換する</span>
+        <span class="settings-help">noteは見出しがh2/h3のみのため、推奨ON</span>
+      </label>
+      <label class="settings-item">
+        <input type="checkbox" id="setting-image-annotation" class="settings-checkbox" checked>
+        <span class="settings-label">画像URLの注釈を入れる</span>
+        <span class="settings-help">OFFにすると画像が出力から削除されます</span>
+      </label>
+      <label class="settings-item">
+        <input type="checkbox" id="setting-auto-preview" class="settings-checkbox">
+        <span class="settings-label">入力中にプレビューを自動表示する</span>
+        <span class="settings-help">入力停止から0.5秒後にプレビューを更新</span>
+      </label>
+    </section>
+
+    <p class="app-description">Markdownを貼り付けて変換ボタンを押してください</p>
+
+    <textarea
+      id="markdown-input"
+      class="markdown-input"
+      placeholder="# 見出し&#10;**太字** *斜体* [リンク](https://example.com)&#10;- リスト1&#10;- リスト2&#10;&#10;> 引用文&#10;&#10;`インラインコード`"
+      spellcheck="false"
+    ></textarea>
+
+    <div class="button-row">
+      <button id="convert-btn" class="btn btn-primary" type="button">変換してコピー</button>
+      <button id="preview-btn" class="btn btn-secondary" type="button">プレビュー</button>
+    </div>
+
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <section id="preview-area" class="preview-area" hidden>
+      <header class="preview-header">
+        <h2 class="preview-title">プレビュー</h2>
+        <span id="preview-char-count" class="preview-char-count" aria-live="polite"></span>
+      </header>
+      <p class="preview-disclaimer">※ 実際のnote画面では多少異なる場合があります</p>
+      <div id="preview-content" class="preview-content"></div>
+    </section>
+
+    <section id="image-list-area" class="image-list-area" hidden>
+      <header class="image-list-header">
+        <h2 class="image-list-title">画像一覧</h2>
+        <span id="image-list-count" class="image-list-count" aria-live="polite"></span>
+      </header>
+      <p class="image-list-disclaimer">noteの執筆画面で手動アップロードしてください</p>
+      <ol id="image-list" class="image-list"></ol>
+    </section>
+
+    <footer class="other-tools" id="other-tools">
+      <p class="developer-note">
+        Made by <span class="developer-note-name">Amane.N</span>
+      </p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
